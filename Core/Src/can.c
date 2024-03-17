@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -24,6 +24,7 @@
 #include "hw_config.h"
 #include "user_config.h"
 #include "math_ops.h"
+#include "stdio.h"
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan1;
@@ -182,6 +183,7 @@ void pack_reply(CANTxMessage *msg, uint8_t id, float p, float v, float t, float 
 /// 6: [kd[3-0], torque[11-8]]
 /// 7: [torque[7-0]]
 void unpack_cmd(CANRxMessage msg, float *commands){// ControllerStruct * controller){
+//        printf("Received   ");
         int p_int = (msg.data[0]<<8)|msg.data[1];
         int v_int = (msg.data[2]<<4)|(msg.data[3]>>4);
         int kp_int = ((msg.data[3]&0xF)<<8)|msg.data[4];
@@ -193,9 +195,10 @@ void unpack_cmd(CANRxMessage msg, float *commands){// ControllerStruct * control
         commands[2] = uint_to_float(kp_int, KP_MIN, KP_MAX, 12);
         commands[3] = uint_to_float(kd_int, KD_MIN, KD_MAX, 12);
         commands[4] = uint_to_float(t_int, -I_MAX*KT*GR, I_MAX*KT*GR, 12);
-    //printf("Received   ");
-    //printf("%.3f  %.3f  %.3f  %.3f  %.3f   %.3f", controller->p_des, controller->v_des, controller->kp, controller->kd, controller->t_ff, controller->i_q_ref);
-    //printf("\n\r");
+
+//        printf("PReceived   ");
+//        printf("%.3f  %.3f  %.3f  %.3f  %.3f   %.3f", controller->p_des, controller->v_des, controller->kp, controller->kd, controller->t_ff, controller->i_q_ref);
+//        printf("\n\r");
     }
 
 /* USER CODE END 1 */

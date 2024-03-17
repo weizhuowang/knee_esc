@@ -249,7 +249,7 @@ int main(void)
   HAL_NVIC_SetPriority(CAN_ISR, 0x01, 0x01);
 
   /* Start the FSM */
-  state.state = MENU_MODE;
+  state.state = INIT_TEMP_MODE;
   state.next_state = MENU_MODE;
   state.ready = 1;
 
@@ -267,9 +267,10 @@ int main(void)
 
 	  HAL_Delay(100);
 	  drv_print_faults(drv);
-	 // if(state.state==MOTOR_MODE){
-	  	  //printf("%.2f %.2f %.2f %.2f %.2f\r\n", controller.p_des, controller.v_des, controller.kp, controller.kd, controller.t_ff);
-	  //}
+//      printf("waiting for drv\r\n");
+	  if(state.state==MOTOR_MODE){
+	  	  printf("%.2f %.2f %.2f %.2f %.2f\r\n", controller.p_des, controller.v_des, controller.kp, controller.kd, controller.t_ff);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
