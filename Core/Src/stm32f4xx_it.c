@@ -321,4 +321,3 @@ void can_tx_rx(void){
 
 }
 /* USER CODE END 1 */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
