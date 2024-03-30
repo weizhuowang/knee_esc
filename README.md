@@ -7,6 +7,30 @@ After you download this repo, a general workflow is like this:
 Note:
 - Make sure you only edit inside the comment block (if there is any in the file, especially main.c). Since these files are shared managed by stm32cubemx too so any code outside of the block can be deleted when regenerating.
 
+Suggested Setup of ESC:
+    Configuration Options
+    prefix parameter                       min   max    current value
+
+    Motor:
+    g    Gear Ratio                      0     -      1.000
+    k    Torque Constant (N-m/A)         0     -      0.04000
+
+    Control:
+    b    Current Bandwidth (Hz)          100   2000   100.000
+    l    Current Limit (A)               0.0   75.0   4.000
+    p    Max Position Setpoint (rad)     -     -      12.500
+    v    Max Velocity Setpoint (rad)/s   -     -      65.000
+    x    Max Position Gain (N-m/rad)     0.0   1000.0 500.000
+    d    Max Velocity Gain (N-m/rad/s)   0.0   5.0    5.000
+    f    FW Current Limit (A)            0.0   33.0   0.000
+    c    Continuous Current (A)          0.0   40.0   4.000
+    a    Calibration Current (A)         0.0   20.0   2.000
+
+    CAN:
+    i    CAN ID                          0     127    1
+    m    CAN TX ID                       0     127    0
+    t    CAN Timeout (cycles)(0 = none)  0     100000 1000
+
 ========================================Ben's Readme========================================
 # motorcontrol
 Written specifically for these motor controllers
