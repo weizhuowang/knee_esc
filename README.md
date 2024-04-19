@@ -17,13 +17,13 @@ Suggested Setup of ESC:
 
     Control:
     b    Current Bandwidth (Hz)          100   2000   100.000
-    l    Current Limit (A)               0.0   75.0   4.000
+    l    Current Limit (A)               0.0   75.0   8.000
     p    Max Position Setpoint (rad)     -     -      12.500
     v    Max Velocity Setpoint (rad)/s   -     -      65.000
-    x    Max Position Gain (N-m/rad)     0.0   1000.0 500.000
+    x    Max Position Gain (N-m/rad)     0.0   1000.0 1000.000
     d    Max Velocity Gain (N-m/rad/s)   0.0   5.0    5.000
     f    FW Current Limit (A)            0.0   33.0   0.000
-    c    Continuous Current (A)          0.0   40.0   4.000
+    c    Continuous Current (A)          0.0   40.0   8.000
     a    Calibration Current (A)         0.0   20.0   2.000
 
     CAN:
