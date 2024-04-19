@@ -1,8 +1,8 @@
 After you download this repo, a general workflow is like this:
 1. Install STM32CubeMX
-2. Open .ioc file with STM32CubeMX and hit generate to get the C project setup (Cmakefile, library code)
-3. Setup openOCD toolchain if you haven't done so. You can either base on CLion or VSCode depends on your preference.
-4. Change any variables or code you see fit, and flash the firmware to the board when finished.
+1. Open .ioc file with STM32CubeMX and hit generate to get the C project setup (Cmakefile, library code)
+1. Setup openOCD toolchain if you haven't done so. You can either base on CLion or VSCode depends on your preference.
+1. Change any variables or code you see fit, and flash the firmware to the board when finished.
 
 Note:
 - Make sure you only edit inside the comment block (if there is any in the file, especially main.c). Since these files are shared managed by stm32cubemx too so any code outside of the block can be deleted when regenerating.
@@ -23,7 +23,7 @@ Suggested Setup of ESC:
     x    Max Position Gain (N-m/rad)     0.0   1000.0 1000.000
     d    Max Velocity Gain (N-m/rad/s)   0.0   5.0    5.000
     f    FW Current Limit (A)            0.0   33.0   0.000
-    c    Continuous Current (A)          0.0   40.0   8.000
+    c    Continuous Current (A)          0.0   40.0   4.000
     a    Calibration Current (A)         0.0   20.0   2.000
 
     CAN:
